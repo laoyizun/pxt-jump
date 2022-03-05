@@ -1,5 +1,6 @@
 {
     "name": "jump-extension",
+    "version": "1.0.0",
     "description": "",
     "dependencies": {
         "device": "*",
