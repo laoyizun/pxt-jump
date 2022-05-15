@@ -43,7 +43,7 @@ namespace Jump {
     //%inlineInputMode=inline
     //afterOnStart = true
     export function intJump(s: Sprite, vY: number, aY: number, t: number) {
-        s.ay = aY
+        sprites.setDataNumber(s, "aY", aY)
         sprites.setDataNumber(s, "vY", -vY)
         sprites.setDataNumber(s, "maxJumpTime", t)
         sprites.setDataNumber(s, "jumpTime", 0)
