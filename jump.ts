@@ -24,11 +24,7 @@ namespace Jump {
     export function setJump(s: Sprite) {
         let jumpTime = getJumpTime(s)
         let maxJumpTime = sprites.readDataNumber(s, "maxJumpTime")
-        if (s.vy == 0 || s.ay == 0) {
-            s.vy = -100
-            s.ay = 200
-        }
-        else if (jumpTime < maxJumpTime) {
+        if (jumpTime < maxJumpTime) {
             s.vy = sprites.readDataNumber(s, "vY")
         }
         sprites.setDataNumber(s, "jumpTime", jumpTime + 1)
@@ -43,7 +39,7 @@ namespace Jump {
     //%inlineInputMode=inline
     //afterOnStart = true
     export function intJump(s: Sprite, vY: number, aY: number, t: number) {
-        sprites.setDataNumber(s, "aY", aY)
+        s.ay = aY
         sprites.setDataNumber(s, "vY", -vY)
         sprites.setDataNumber(s, "maxJumpTime", t)
         sprites.setDataNumber(s, "jumpTime", 0)
