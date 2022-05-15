@@ -6,7 +6,7 @@ namespace Jump {
 
 
     scene.onHitWall(SpriteKind.Player, function (s: Sprite, location) {
-        if (location.row * 16 >= s.y) {
+        if (location.y >= s.y) {
             sprites.setDataNumber(s, "jumpTime", 0)
         }
     })
