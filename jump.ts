@@ -9,12 +9,13 @@ namespace Jump {
 
 
     export function getJumpTime(s: Sprite) {
-        return sprites.readDataNumber(s, "jumpTime")
         scene.onHitWall(s.kind(), function (s: Sprite, location) {
             if (location.y >= s.y) {
                 sprites.setDataNumber(s, "jumpTime", 0)
             }
         })
+        return sprites.readDataNumber(s, "jumpTime")
+
     }
     //%block
     //%group="Jump"
