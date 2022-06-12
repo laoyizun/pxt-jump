@@ -5,15 +5,16 @@ namespace Jump {
 
 
 
-    scene.onHitWall(SpriteKind.Player, function (s: Sprite, location) {
-        if (location.y >= s.y) {
-            sprites.setDataNumber(s, "jumpTime", 0)
-        }
-    })
+
 
 
     export function getJumpTime(s: Sprite) {
         return sprites.readDataNumber(s, "jumpTime")
+        scene.onHitWall(s.kind(), function (s: Sprite, location) {
+            if (location.y >= s.y) {
+                sprites.setDataNumber(s, "jumpTime", 0)
+            }
+        })
     }
     //%block
     //%group="Jump"
